@@ -13,6 +13,7 @@ content_type_encoding = r.encoding if r.encoding != 'ISO-8859-1' else None
 soup = BeautifulSoup(r.content, 'html.parser', from_encoding=content_type_encoding)
 
 termlist = soup.find(id="termlist")
+print("START========")
 
 for list in termlist.find_all('a'):
     inner_text = list.text.replace('\n','')
